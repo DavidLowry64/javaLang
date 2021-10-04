@@ -37,27 +37,34 @@ public class objectClass {
 		        return "The created person's details are [firstName " + firstName + " and lastName " + lastName + "]";
 		    }
 	     
+	     @Override
+	     public boolean equals(Object obj) {
+	        if (this == obj)
+	           return true;
+	        if (obj == null)
+	           return false;
+	        if (getClass() != obj.getClass())
+	           return false;
+	        Person other = (Person) obj;
+	        if (firstName == null) {
+	           if (other.firstName != null)
+	              return false;
+	        } else if (!firstName.equals(other.firstName))
+	              return false;
+	        if (lastName == null) {
+	           if (other.lastName != null)
+	              return false;
+	        } else if (!lastName.equals(other.lastName))
+	              return false;
+	        return true;
+	     }
 	     
 	     public Object clone() throws CloneNotSupportedException {
 		        Person person = (Person) super.clone();
 		        return person;
 		    }
 	}
-	  /*  @Override
-	    public Object clone() throws CloneNotSupportedException {
-	        Person person = (Person) super.clone();
-	        return person;
-	    }
-
-	    @Override
-	    public String toString() {
-	        return "Person [firstName=" + firstName + ", lastName=" + lastName + "]";
-	    }
-	 
-	  
-}
-*/
-	
+	  	
 	
 	public static void main(String[] args) throws CloneNotSupportedException {
 	   // Date Clone for the Obect Class
@@ -66,22 +73,26 @@ public class objectClass {
 	        System.out.println(date.toString());
 	        Date date2 = (Date) date.clone();
 	        System.out.println(date2.toString());
-	   // Cloneable
 	        
+	        // Cloneable	        
 	        Person person = new Person();
 	        person.setFirstName("David");
 	        person.setLastName("Lowry");
 	        System.out.println(person.toString());
 	        Person person2 = (Person) person.clone();
 	        
-	        		
-/*	        
-	        System.out.println(person.toString());
+	        // Equals Comparative Operator 
+	        Person personOne = new Person();
+	        personOne.setFirstName("David");
+	        personOne.setLastName("Lowry");
 
-	        Person person2 = (Person) person.clone();
+	        Person personTwo = new Person();
+	        personTwo.setFirstName("David");
+	        personTwo.setLastName("Lowry");
 
-	        System.out.println(person2.toString());
-*/
+	        boolean hasEqual = personOne.equals(personTwo);
+	        System.out.println("And the results from the comparision are " + hasEqual);
+	        
 	}
 	
 }
