@@ -10,6 +10,7 @@ public class CompareExample {
 		compareIgnoreCaseTwo();
 		
 		concatenateExample();
+		stringEquals();
 		
 	}
 	
@@ -64,14 +65,27 @@ public class CompareExample {
 			System.out.println("The first string to the second one " + s1.compareToIgnoreCase(s2));	
 			System.out.println("The second string to the third string " + s2.compareToIgnoreCase(s3)); 
 		}
-
-		// Compare different and empty strings
+		
+		// Strings Equal
+		public static void stringEquals()
+		{
+		
+			String stringOne = "javaguides";
+			String stringTwo = "javaguides";
+			System.out.println("The first String is " + stringOne);
+			System.out.println("The second String is " + stringTwo);
+			
+		
+		System.out.println("Is Content Equals " + stringOne.contentEquals(stringTwo));
+		System.out.println("String buffer content Equal "  + stringOne.contentEquals(new StringBuffer(stringTwo)));
+		}
+		// Concatenate and contains example
 		public static void concatenateExample() 
 		{
 		String str = "David";
 		str = str.concat(" Lowry");
 		System.out.println("Concatenates one String to another new String " + str);
-		
+		System.out.println("Does it contain this avi " + str.contains("avi"));
 		}
 	
 
