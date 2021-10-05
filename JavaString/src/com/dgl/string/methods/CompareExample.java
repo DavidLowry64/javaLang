@@ -9,6 +9,7 @@ public class CompareExample {
 		compareIgnoreCaseOne();
 		compareIgnoreCaseTwo();
 		
+		concatenateExample();
 		
 	}
 	
@@ -59,14 +60,19 @@ public class CompareExample {
 			// compare with empty string, returns length of the string
 			System.out.println("The first string is " + s1);
 			System.out.println("The second string is actually blank empty " + s2);
-			System.out.println("The third string is " + s3);
-			
-			System.out.println("The first string to the second one " + s1.compareToIgnoreCase(s2));
-			
-			
+			System.out.println("The third string is " + s3);			
+			System.out.println("The first string to the second one " + s1.compareToIgnoreCase(s2));	
 			System.out.println("The second string to the third string " + s2.compareToIgnoreCase(s3)); 
 		}
 
+		// Compare different and empty strings
+		public static void concatenateExample() 
+		{
+		String str = "David";
+		str = str.concat(" Lowry");
+		System.out.println("Concatenates one String to another new String " + str);
+		
+		}
 	
 
 }
